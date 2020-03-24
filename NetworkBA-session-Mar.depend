@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1585058981 source:/run/media/shahnoor/drive01/Projects/CodeBlocks/NetworkBA-session-Mar/main.cpp
+	<iostream>
+	"node.h"
+	"link.h"
+
+1585058519 /run/media/shahnoor/drive01/Projects/CodeBlocks/NetworkBA-session-Mar/node.h
+
+1585059013 /run/media/shahnoor/drive01/Projects/CodeBlocks/NetworkBA-session-Mar/link.h
+	<iostream>
+
