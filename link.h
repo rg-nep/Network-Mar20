@@ -2,7 +2,7 @@
 #ifndef NETWORK_LINK_H
 #define NETWORK_LINK_H
 
-#include <strstream>
+//#include <sstream>
 #include <iostream>
 
 class Link{
@@ -32,13 +32,13 @@ public:
     int get_id(){
         return _id;
         }
-/*
-    std::string get_str(){
-        std::stringstream ss;
-        ss << "(" << _node_a << "," << _node_b << ")";
-        return ss.str();
-    }
-    */
+
+//    std::string get_str(){
+//        std::stringstream ss;
+//        ss << "(" << _node_a << "," << _node_b << ")";
+//        return ss.str();
+//    }
+
 };
 
 #endif // NETWORK_LINK_H

@@ -2,10 +2,13 @@
 #ifndef NETWORK_NODE_H
 #define NETWORK_NODE_H
 
+#include<vector>
 
 class  Node{
     int _id = -1;  /// id of the node
     int _gid = -1; /// group id
+
+    std::vector<int> _links; // to which links the node is connected
 public:
     int set_id(int id){
         _id=id;

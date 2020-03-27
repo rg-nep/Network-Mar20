@@ -13,8 +13,8 @@ void Network::build_network_seed(){
         for (int i=0; i < _seed_size; ++i){
             for (int j=i; j < _seed_size; ++j){
                 _links.push_back(Link(_nodes[i].get_id(), _nodes[j].get_id()));
-                //_links.set_id(_link_counter);
-                //_link_counter ++;
+                _links[_link_counter].set_id(_link_counter);
+                _link_counter ++;
             }
 
         }
@@ -25,7 +25,7 @@ void Network::build_network_seed(){
 void Network::view_links(){
     cout << "id : link" << endl;
     for(size_t i{}; i < _links.size(); ++i){
-        //cout << _links[i].get_id() << " : " << _links[i].get_str() << endl;
+//        cout << _links[i].get_id() << " : " << _links[i].get_str() << endl;
         cout << _links[i].get_id() << " : ("
                 << _links[i].get_node_a() << ","
                 << _links[i].get_node_b() << ")" << endl;
@@ -53,6 +53,17 @@ void Network::grow(int N){
         _nodes.push_back(Node());
         _nodes[i].set_id(_node_counter++);
     }
+
+}
+
+void Network::connect_nodes(int a, int b){
+//    if(a >= _node_counter || b >= _node_counter){
+//        cerr << "nodes does not exists" << endl;
+//    }
+//    Node na = _nodes[a]; // to ensure that nodes exists
+//    Node nb = _nodes[b];
+//    _links.push_back(Link(na.get_id(), nb.get_id()));
+//    _links[_link_counter].set_id(_link_counter++);
 
 }
 

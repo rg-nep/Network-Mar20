@@ -60,9 +60,13 @@ void func3(){
     Network net = Network(3);
     net.view_nodes();
     net.view_links();
+
     net.grow(5);
     net.view_nodes();
     net.view_links();
+
+//    net.connect_nodes(1,4);
+//    net.view_links();
 
 }
 
