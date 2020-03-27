@@ -34,6 +34,9 @@
 		</Compiler>
 		<Unit filename="link.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="network.cpp" />
+		<Unit filename="network.h" />
+		<Unit filename="network_ba.h" />
 		<Unit filename="node.h" />
 		<Extensions>
 			<envvars />
