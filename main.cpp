@@ -2,7 +2,7 @@
 #include "node.h"
 #include "link.h"
 #include<vector>
-
+#include "network.h"
 
 using namespace std;
 
@@ -26,7 +26,7 @@ void func1(){
 }
 
 void func2(){
-    int N=5;
+    int N=5; // seed size
     vector<Node> nodes;
     vector<Link> links;
     for (int i=0; i < N; ++i){
@@ -51,12 +51,29 @@ void func2(){
 
 }
 
+
+void func3(){
+    int b = 3;
+    cout << b << endl;
+    int a = int(3); //
+
+    Network net = Network(3);
+    net.view_nodes();
+    net.view_links();
+    net.grow(5);
+    net.view_nodes();
+    net.view_links();
+
+}
+
 int main()
 {
     cout << "Network Program" << endl;
 
     //func1();
-    func2();
+    //func2();
+
+    func3();
 
     return 0;
 }

@@ -32,7 +32,9 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="link.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="node.h" />
 		<Extensions>
 			<envvars />
 			<code_completion />

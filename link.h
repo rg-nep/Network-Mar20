@@ -1,5 +1,9 @@
 
-#include <iostream>>
+#ifndef NETWORK_LINK_H
+#define NETWORK_LINK_H
+
+#include <strstream>
+#include <iostream>
 
 class Link{
 
@@ -15,6 +19,9 @@ public:
         _node_b = node_b;
     }
 
+    int get_node_a(){return _node_a;}
+    int get_node_b(){return _node_b;}
+
     void view(){
     std::cout << "(" << _node_a << "," << _node_b << ")" << std::endl;
     }
@@ -25,4 +32,13 @@ public:
     int get_id(){
         return _id;
         }
+/*
+    std::string get_str(){
+        std::stringstream ss;
+        ss << "(" << _node_a << "," << _node_b << ")";
+        return ss.str();
+    }
+    */
 };
+
+#endif // NETWORK_LINK_H
