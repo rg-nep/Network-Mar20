@@ -9,6 +9,8 @@
 // general property of a network
 class Network{
     // private
+
+protected: //only visible to a subclass
     std::vector<Node> _nodes;
     std::vector<Link> _links;
 
@@ -19,7 +21,9 @@ class Network{
 public:
 
     Network(int seed=5){ // constructor
+
         _seed_size = seed;
+        std::cout << "seed size " << _seed_size << std::endl;
         build_network_seed();
     }
 

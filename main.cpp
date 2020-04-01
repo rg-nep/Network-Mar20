@@ -3,6 +3,9 @@
 #include "link.h"
 #include<vector>
 #include "network.h"
+#include "network_ba.h"
+#include <math.h>
+
 
 using namespace std;
 
@@ -65,7 +68,35 @@ void func3(){
     net.view_nodes();
     net.view_links();
 
+    net.connect_nodes(1,4);
+    net.view_links();
+
+    net.connect_nodes(4,2);
+    net.view_links();
+
+}
+
+void func4(){
+    int b = 3;
+    cout << b << endl;
+    int a = ceil(1*1.2); //
+    cout << a << endl;
+
+    int m = 2;
+    NetworkBA net = NetworkBA(m);
+    net.view_node_pool();
+
+    net.view_nodes();
+    net.view_links();
+
+//    net.grow(5);
+//    net.view_nodes();
+//    net.view_links();
+//
 //    net.connect_nodes(1,4);
+//    net.view_links();
+//
+//    net.connect_nodes(4,2);
 //    net.view_links();
 
 }
@@ -77,7 +108,11 @@ int main()
     //func1();
     //func2();
 
-    func3();
+//    func3();
 
+    func4();
+
+    cout << "Program ending time : " << endl;
+    cout << "Time elapsed in minutes : " << endl;
     return 0;
 }

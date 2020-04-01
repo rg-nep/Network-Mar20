@@ -8,6 +8,7 @@ class  Node{
     int _id = -1;  /// id of the node
     int _gid = -1; /// group id
 
+    int _degree=0;
     std::vector<int> _links; // to which links the node is connected
 public:
     int set_id(int id){
@@ -16,7 +17,14 @@ public:
 
     int get_id(){
         return _id;
-        }
+    }
+
+    void increaseDegree(){
+        ++_degree;
+    }
+
+    int degree(){return _degree;}
+
 };
 
 

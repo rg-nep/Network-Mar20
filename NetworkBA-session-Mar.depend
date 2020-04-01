@@ -1,22 +1,32 @@
 # depslib dependency file v1.0
-1585322944 source:/run/media/shahnoor/drive01/Projects/CodeBlocks/NetworkBA-session-Mar/main.cpp
+1585753328 source:/run/media/shahnoor/drive01/Projects/CodeBlocks/NetworkBA-session-Mar/main.cpp
 	<iostream>
 	"node.h"
 	"link.h"
 	<vector>
 	"network.h"
+	"network_ba.h"
+	<math.h>
 
-1585322199 /run/media/shahnoor/drive01/Projects/CodeBlocks/NetworkBA-session-Mar/node.h
+1585750433 /run/media/shahnoor/drive01/Projects/CodeBlocks/NetworkBA-session-Mar/node.h
 	<vector>
 
-1585322979 /run/media/shahnoor/drive01/Projects/CodeBlocks/NetworkBA-session-Mar/link.h
+1585753219 /run/media/shahnoor/drive01/Projects/CodeBlocks/NetworkBA-session-Mar/link.h
+	<sstream>
 	<iostream>
 
-1585319043 /run/media/shahnoor/drive01/Projects/CodeBlocks/NetworkBA-session-Mar/network.h
+1585751043 /run/media/shahnoor/drive01/Projects/CodeBlocks/NetworkBA-session-Mar/network.h
 	<vector>
 	"node.h"
 	"link.h"
 
-1585322989 source:/run/media/shahnoor/drive01/Projects/CodeBlocks/NetworkBA-session-Mar/network.cpp
+1585753292 source:/run/media/shahnoor/drive01/Projects/CodeBlocks/NetworkBA-session-Mar/network.cpp
+	"network.h"
+
+1585753374 source:/run/media/shahnoor/drive01/Projects/CodeBlocks/NetworkBA-session-Mar/network_ba.cpp
+	"network_ba.h"
+	<math.h>
+
+1585749559 /run/media/shahnoor/drive01/Projects/CodeBlocks/NetworkBA-session-Mar/network_ba.h
 	"network.h"
 
