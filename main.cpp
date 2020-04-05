@@ -5,7 +5,7 @@
 #include "network.h"
 #include "network_ba.h"
 #include <math.h>
-
+#include <fstream>
 
 using namespace std;
 
@@ -89,15 +89,34 @@ void func4(){
     net.view_nodes();
     net.view_links();
 
-//    net.grow(5);
+    // session 04
+//    net.addNode();
 //    net.view_nodes();
 //    net.view_links();
-//
-//    net.connect_nodes(1,4);
-//    net.view_links();
-//
-//    net.connect_nodes(4,2);
-//    net.view_links();
+//    net.view_node_pool();
+
+    net.grow(1000);
+    net.view_nodes();
+    net.view_links();
+    net.view_node_pool();
+
+    auto dd = net.degreeDistribution();
+    cout << "degree : number of node with that degree" << endl;
+    cout << "k : N(k)" << endl;
+
+    ofstream fout("degree-distribution.txt");
+
+    fout << "# degree : number of node with that degree" << endl;
+    fout << "# degree distribution BA network" << endl;
+    fout << "# <k> <N(k)>" << endl;
+
+
+    for(int i=0; i < dd.size(); ++i){
+        //cout << i << " : " << dd[i] << endl;
+
+        if(dd[i] == 0) continue;
+        fout << i << "\t" << dd[i] << endl;
+    }
 
 }
 

@@ -13,6 +13,9 @@ public:
     NetworkBA(int m=1);
     void view_node_pool();
 
+    void addNode(); // adding new node
+    void grow(int N);
+
 
 };
 

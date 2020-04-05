@@ -73,5 +73,21 @@ void Network::connect_nodes(int a, int b){
     _links[_link_counter].set_id(_link_counter);
     _link_counter += 1;
 
+    // session 04 : update degree
+    _nodes[a].increaseDegree();
+    _nodes[b].increaseDegree();
+
 }
 
+
+std::vector<int> Network::degreeDistribution(){
+    vector<int>  degs;
+    for(auto n: _nodes){// range based for loop
+        int d = n.degree();
+        if(degs.size() < d+1){
+            degs.resize(d+1);
+        }
+        ++degs[d];
+    }
+    return degs;
+}

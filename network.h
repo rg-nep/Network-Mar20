@@ -34,6 +34,8 @@ public:
     void grow(int N);
     void connect_nodes(int a, int b);
 
+    std::vector<int> degreeDistribution();
+
 };
 
 #endif // NETWORK_NETWORK_H
