@@ -1,6 +1,5 @@
-bin/*
-bin/Debug/*
-obj/*
-obj/Debug/*
-*txt
+cpp/bin/*
+cpp/bin/Debug/*
+cpp/obj/*
+cpp/obj/Debug/*
 
