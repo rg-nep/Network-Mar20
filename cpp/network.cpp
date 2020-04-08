@@ -91,3 +91,14 @@ std::vector<int> Network::degreeDistribution(){
     }
     return degs;
 }
+
+
+void Network::reset(){
+    _nodes.clear();
+    _links.clear();
+    _link_counter=0;
+    _node_counter=0;
+
+    build_network_seed();
+
+}

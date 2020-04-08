@@ -11,12 +11,14 @@ NetworkBA::NetworkBA(int m)
     _m = m;
     //cout << "node pool" << endl;
 
-    for(int i=0; i < _nodes.size(); ++i){
+    init_node_pool();
+}
 
+void NetworkBA::init_node_pool(){
+    for(int i=0; i < _nodes.size(); ++i){
         for(int j=0; j < _nodes[i].degree(); ++j){
             _node_pool.push_back(_nodes[i].get_id());
         }
-
     }
 }
 
@@ -30,7 +32,7 @@ void NetworkBA::view_node_pool(){
 
 // session 04
 void NetworkBA::addNode(){
-    cout << "NetworkBA::addNode " << endl;
+    //cout << "NetworkBA::addNode " << endl;
 
     _nodes.push_back(Node());
     int node_a = _node_counter; // id of the new node;
@@ -68,4 +70,11 @@ void NetworkBA::grow(int N){
  */
         addNode();
     }
+}
+
+// session 05
+void NetworkBA::reset(){
+    Network::reset();
+    _node_pool.clear();
+    init_node_pool();
 }

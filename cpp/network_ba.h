@@ -16,6 +16,11 @@ public:
     void addNode(); // adding new node
     void grow(int N);
 
+    // session 05
+    void reset();
+    void init_node_pool();
+
+
 
 };
 

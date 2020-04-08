@@ -6,6 +6,7 @@
 #include "network_ba.h"
 #include <math.h>
 #include <fstream>
+#include <chrono>
 
 using namespace std;
 
@@ -78,9 +79,12 @@ void func3(){
 
 void func4(){
     int b = 3;
-    cout << b << endl;
+    //cout << b << endl;
     int a = ceil(1*1.2); //
-    cout << a << endl;
+    //cout << a << endl;
+
+    int v = int(3);
+    cout << v << endl;
 
     int m = 2;
     NetworkBA net = NetworkBA(m);
@@ -95,7 +99,7 @@ void func4(){
 //    net.view_links();
 //    net.view_node_pool();
 
-    net.grow(1000);
+    net.grow(10);
     net.view_nodes();
     net.view_links();
     net.view_node_pool();
@@ -120,16 +124,84 @@ void func4(){
 
 }
 
-int main()
+
+
+/*
+session 05
+*/
+void run_network_ba(int argc, char* argv[]){
+    if(argc < 4){
+        cout << "m  = argv[1]" << endl;
+        cout << "N  = argv[2]" << endl;
+        cout << "En = argv[3]" << endl;
+        return;
+    }
+    int m = atoi(argv[1]);
+    int N = atoi(argv[2]);
+    int En = atoi(argv[3]);
+
+    cout << "m  = " << m  << endl;
+    cout << "N  = " << N  << endl;
+    cout << "En = " << En << endl;
+
+
+    vector<int> degree_dist;
+
+    NetworkBA net = NetworkBA(m);
+
+    for(size_t e=1; e <= En; ++e){
+        auto start = std::chrono::steady_clock::now();
+
+        net.reset();
+        net.grow(N);
+
+        auto dd = net.degreeDistribution();
+        auto sz = dd.size();
+        if (degree_dist.size() < sz){
+            degree_dist.resize(sz);
+        }
+        for(size_t i{}; i < sz; ++i){
+            degree_dist[i] += dd[i];
+        }
+        auto stop = std::chrono::steady_clock::now();
+        std::chrono::duration<double> elapsed_seconds = stop-start;
+        std::cout << "run " << e << ". Elapsed time: " << elapsed_seconds.count() << " sec" << endl;
+    }
+
+//    cout << "degree : number of node with that degree" << endl;
+//    cout << "k : N(k)" << endl;
+
+    string filename = "degree-distribution_m" + to_string(m) + "_.txt";
+    ofstream fout(filename);
+
+    fout << "# degree distribution BA network" << endl;
+    fout << "# degree : number of node with that degree" << endl;
+    fout << "# <k> <N(k)>" << endl;
+
+
+    for(int i=0; i < degree_dist.size(); ++i){
+        //cout << i << " : " << dd[i] << endl;
+
+        if(degree_dist[i] == 0) continue;
+        fout << i << "\t" << degree_dist[i]/double(En) << endl;
+    }
+
+}
+
+/**
+ session 05
+ Command line argument
+**/
+int main(int argc, char* argv[])
 {
     cout << "Network Program" << endl;
-
     //func1();
     //func2();
-
 //    func3();
+    //func4();
 
-    func4();
+    // session 05
+    run_network_ba(argc, argv);
 
     cout << "Program ending time : " << endl;
     cout << "Time elapsed in minutes : " << endl;

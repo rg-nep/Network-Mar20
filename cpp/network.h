@@ -36,6 +36,9 @@ public:
 
     std::vector<int> degreeDistribution();
 
+    // session 05
+    void reset();
+
 };
 
 #endif // NETWORK_NETWORK_H
